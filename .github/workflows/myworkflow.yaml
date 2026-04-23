@@ -7,6 +7,12 @@ jobs:
        steps: 
           - name: Print Hello
             run: echo "Hello World"
+second job:
+    print:
+    runs on: macOS-latest
+    steps:
+    - name: Print hehehehe
+    run: echo "hehehehe"
 
       
 
