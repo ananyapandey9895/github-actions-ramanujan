@@ -9,10 +9,10 @@ jobs:
             run: echo "Hello World"
 second job:
     print:
-    runs on: macOS-latest
-    steps:
-    - name: Print hehehehe
-    run: echo "hehehehe"
+      runs on: macOS-latest
+      steps:
+        - name: Print hehehehe
+          run: echo "hehehehe"
 
       
 
