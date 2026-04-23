@@ -1,19 +1,21 @@
+
 name: Print Hello World
 on:
-   push:
+  push:
 jobs:
-    print:
-       runs-on: macOS-latest
-       steps: 
-          - name: Print Hello
-            run: echo "Hello World"
-second job:
-    print:
-      runs on: macOS-latest
-      steps:
-        - name: Print hehehehe
-          run: echo "hehehehe"
-
-      
-
-
+  print:
+    runs-on: macOS-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - name: Repo clone
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run test
+        run: npm test
